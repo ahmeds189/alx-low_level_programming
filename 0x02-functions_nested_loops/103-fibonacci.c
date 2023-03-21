@@ -7,7 +7,8 @@
  */
 int main(void)
 {
-long int a = 1, b = 2, c, sum = 2;
+long int a = 1, b = 2,
+c, sum = 2;
 
 while (b <= 4000000)
 {
