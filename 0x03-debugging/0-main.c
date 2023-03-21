@@ -3,7 +3,7 @@
 /**
  * main - tests the positive_or_negative function
  * 
- * Return: 0
+ * Return: Always 0
  */
 int main(void)
 {
