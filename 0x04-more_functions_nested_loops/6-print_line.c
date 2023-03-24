@@ -2,18 +2,17 @@
 
 /**
  * print_line - function that draws a straight line in the terminal.
- * @n: numbers of time the character to be printed
+ * @n: numbers of time the character _ to be printed
  */
 void print_line(int n)
 {
-if(n <= 0)
+int len;
+
+if (n > 0)
 {
-_putchar('\n');
-return;
-}
-for (int i = 0; i < n; i++)
-{
+for (len = 0; len < n; len++)
 _putchar('_');
 }
+
 _putchar('\n');
 }
