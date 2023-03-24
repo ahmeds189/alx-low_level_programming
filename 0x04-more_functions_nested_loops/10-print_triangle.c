@@ -19,7 +19,7 @@ return;
 for (i = 1; i <= size; i++)
 {
 for (j = 1; j <= size - i; j++)
- _putchar(' ');
+_putchar(' ');
 for (j = 1; j <= i; j++)
 _putchar('#');
 _putchar('\n');
