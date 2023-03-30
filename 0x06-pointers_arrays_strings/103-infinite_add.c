@@ -12,56 +12,32 @@
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
   int i = 0, j = 0, k = 0, l = 0, m = 0;
-  char tmp;
 
   while (n1[i] != '\0')
     i++;
   while (n2[j] != '\0')
     j++;
-  if (i + 2 > size_r || j + 2 > size_r)
+  if (i > size_r || j > size_r)
     return (0);
-  r[size_r - 1] = '\0';
-  for (k = i - 1, l = j - 1; k >= 0 && l >= 0; k--, l--, m++)
+  j--;
+  i--;
+  while (i >= 0 || j >= 0 || k)
   {
-    tmp = n1[k] + n2[l] - '0' + r[m];
-    if (tmp > '9')
-    {
-      r[m + 1] += 1;
-      tmp -= 10;
-    }
-    r[m] = tmp;
+    if (i >= 0)
+      l += n1[i--] - '0';
+    if (j >= 0)
+      l += n2[j--] - '0';
+    if (l >= 10)
+      k = 1;
+    else
+      k = 0;
+    r[m++] = (l % 10) + '0';
+    l /= 10;
   }
-  for (; k >= 0; k--, m++)
-  {
-    tmp = n1[k] + r[m];
-    if (tmp > '9')
-    {
-      r[m + 1] += 1;
-      tmp -= 10;
-    }
-    r[m] = tmp;
-  }
-  for (; l >= 0; l--, m++)
-  {
-    tmp = n2[l] + r[m];
-    if (tmp > '9')
-    {
-      r[m + 1] += 1;
-      tmp -= 10;
-    }
-    r[m] = tmp;
-  }
-  if (r[m - 1] == '0')
-    r[m - 1] = '\0';
-  else if (m >= size_r)
+  if (m > size_r)
     return (0);
-  else
-    r[m] = '\0';
-  for (i = 0, j = m - 1; i < j; i++, j--)
-  {
-    tmp = r[i];
-    r[i] = r[j];
-    r[j] = tmp;
-  }
+  r[m] = '\0';
+  for (i = 0; i < m / 2; i++)
+    k = r[i], r[i] = r[m - i - 1], r[m - i - 1] = k;
   return (r);
 }
