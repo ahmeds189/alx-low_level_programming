@@ -19,7 +19,7 @@ n = -n;
 while (n / i > 9)
 i *= 10;
 
- while (i != 0)
+while (i != 0)
 {
 _putchar((n / i) % 10 + '0');
 i /= 10;
