@@ -2,7 +2,7 @@
 
 /**
  * wildcmp - compares two strings and returns 1 if 
- *  can be considered identical
+can be considered identical
  * @s1: first string to compare
  * @s2: second string to compare
  *
