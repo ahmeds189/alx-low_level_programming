@@ -19,7 +19,7 @@ i++;
 }
 
 return (i);
-
+}
 
 /**
  * *_strcpy - copies the string pointed to by src
@@ -48,6 +48,7 @@ dest[i] = src[i];
 dest[i] = '\0';
 
 return (dest);
+}
 
 /**
  * new_dog - creates a new dog
