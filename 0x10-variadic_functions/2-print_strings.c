@@ -5,6 +5,7 @@
  * @separator: the string separator
  * @n: the number of aruments
  * @...: the strings to print
+ *
  * Return: void 
  */
 void print_strings(const char *separator, const unsigned int n, ...)
